@@ -4,12 +4,6 @@ import React from 'react';
 import Navbar from '../components/nav';
 
 const Main = () => {
-
-    /*const [cheese, setCheese] = useState(true);
-    useEffect(() => {
-        Swal.fire("Cheese has changed init n that ", "Message", cheese ? "success" : "error");
-    }, [cheese]);*/
-
     return (
         <div className='bg'>
             <Navbar />
