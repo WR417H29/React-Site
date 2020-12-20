@@ -1,6 +1,7 @@
 import './App.css';
 
-import Test from './components/test';
+import Main from './components/main';
+import { Route, Switch } from 'react-router-dom';
 
 /*
  * Default Background Colour: (40, 44, 52)
@@ -9,11 +10,12 @@ import Test from './components/test';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <Test />
-      </header>
-    </div>
+    <main className='App-header'>
+      <Switch>
+        <Route path='/' component={ Main } exact />
+
+      </Switch>
+    </main>
   );
 }
 
