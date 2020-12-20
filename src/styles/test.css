@@ -1,0 +1,22 @@
+a {
+    font-size: 40px;
+    text-decoration: none;
+    color: #fff;
+    padding: 5px;
+}
+
+a:active {
+    color: #fff;
+}
+
+a:hover {
+    color: rebeccapurple;
+}
+
+.topnav {
+    padding: 1px;
+    margin: 10px;
+    display: flex;
+    align-content: top;
+    background-color: red;
+}
