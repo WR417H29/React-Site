@@ -1,6 +1,7 @@
-import './App.css';
+import './main.css';
+import './styles/test.css';
 
-import Main from './components/main';
+import Main from './pages/main';
 import { Route, Switch } from 'react-router-dom';
 
 /*
@@ -10,7 +11,7 @@ import { Route, Switch } from 'react-router-dom';
 
 function App() {
   return (
-    <main className='App-header'>
+    <main className='main'>
       <Switch>
         <Route path='/' component={ Main } exact />
 

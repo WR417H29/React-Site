@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Swal from 'sweetalert2';
-import Navbar from './nav';
-import '../styles/test.css';
+
+import Navbar from '../components/nav';
 
 const Main = () => {
 
@@ -16,11 +16,13 @@ const Main = () => {
 
             <Navbar />
 
-            <button onClick={()=> { 
-                setCheese(!cheese);
-            }}>
-                Swap Cheese
-            </button>
+            <div className="center">
+                <button className='btn' onClick={()=> { 
+                    setCheese(!cheese);
+                }}>
+                    Swap Cheese
+                </button>
+            </div>
 
             <div class='textbox'>
                 <p> { cheese ? "cheese" : "not cheese 😢" } </p>
