@@ -9,6 +9,42 @@ const Apply = () => {
     const [email, setEmail] = useState('');
     const [businessName, setBusinessName] = useState('');
     const [openingType, setOpeningType] = useState([{"online": false, "inPerson": false}]);
+    const [openDays, setOpenDays] = useState([{
+        "mon": {
+            "open": false,
+            "time": ["0000", "2300"]
+        },
+        "tue": {
+            "open": false,
+            "time": ["0000", "2300"]
+        },
+        "wed": {
+            "open": false,
+            "time": ["0000", "2300"]
+        },
+        "thu": {
+            "open": false,
+            "time": ["0000", "2300"]
+        },
+        "fri": {
+            "open": false,
+            "time": ["0000", "2300"]
+        },
+        "sat": {
+            "open": false,
+            "time": ["0000", "2300"]
+        },
+        "sun": {
+            "open": false,
+            "time": ["0000", "2300"]
+        }
+    }]);
+    const [address, setAddress] = useState([{
+        "Postcode": '',
+        "Town": '',
+        "Line-One": '',
+        "Line-Two": '',
+    }]);
 
     const selection = (id) => `
     <select class='odays' id='odays${id}' name='odays${id}'>
@@ -37,10 +73,18 @@ const Apply = () => {
             const child = document.createElement('div');
             child.id = `openDays${id}`;
             child.innerHTML = selection(id);
-            document.getElementById("baseDays").appendChild(child);
+            document.getElementById("baseDays").append(child);
             id += 1;
         }
-    }
+    };
+
+    function removeDay() {
+        if (id > 0) {
+            id -= 1;
+            const day = document.getElementById(`openDays${id}`);
+            day.parentNode.removeChild(day);
+        }
+    };
 
     return(
         <div className='bg'>
@@ -49,27 +93,39 @@ const Apply = () => {
 
             <div className='form-box'>
                 <form className='form' onSubmit={handleSubmit}>
-                    <input type="email" name="email" placeholder="Email" autoComplete="off" onChange={(e) => setEmail(e.target.value)} />
-                    <input type="text" name="businessName" placeholder="Business Name" autoComplete="off" onChange={(e) => setBusinessName(e.target.value)} />
+                    <input style={{ margin: "10px" }} type="email" name="email" placeholder="Email" autoComplete="off" onChange={(e) => setEmail(e.target.value)} />
+                    <input style={{ margin: "10px" }} type="text" name="businessName" placeholder="Business Name" autoComplete="off" onChange={(e) => setBusinessName(e.target.value)} />
                     
-                    <input type="radio" id="burley" name="location" value="Burley" onChange={(e) => setLocation(e.target.value)} /> Burley
+                    <p style={{ padding: "0px", margin: "0px" }}> Location </p>
 
-                    <input type="radio" id="ilkley" name="location" value="Ilkley" onChange={(e) => setLocation(e.target.value)} /> Ilkley
-                    
-                    <input type="radio" id="addingham" name="location" value="Addingham" onChange={(e) => setLocation()} /> Addingham
+                    <select style={{ margin: "10px" }} id="location" name="location">
+                        <option value="burley"> Burley </option>
+                        <option value="ilkley"> Ilkley </option>
+                        <option value="addingham"> Addingham </option>
+                    </select>
 
-                    <input type="checkbox" id="online" name="openingStyle" value="Online" onChange={(e) => {
+                    <input style={{ margin: "10px" }} type="checkbox" id="online" name="openingStyle" value="Online" onChange={(e) => {
                         setOpeningType({ online: e.target.value === "Online", inPerson: openingType.inPerson });
                     }} /> Online
 
-                    <input type="checkbox" id="inPerson" name="openingStyle" value="Inperson" onChange={(e) => {
+                    <input style={{ margin: "10px" }} type="checkbox" id="inPerson" name="openingStyle" value="Inperson" onChange={(e) => {
                         setOpeningType({ online: openingType.online, inPerson: e.target.value === "Inperson"});
                     }} /> In-Person
 
                     <div className="openDays" id="baseDays">
-                        <input type="button" id="newDay" name="newDayBtn" onClick={ newDay() } value="New Day" />
-                        <input type="button" id="removeDay" name="removeDayBtn" value="Remove Day" />
+                        <input style={{ margin: "10px" }} type="button" id="newDay" name="newDayBtn" onClick={ newDay } value="New Day" />
                     </div>
+                    <div>
+                        <input style={{ margin: "10px" }} type="button" id="removeDay" name="removeDayBtn" onClick={ removeDay } value="Remove Day" />
+                    </div>
+                    
+                    <input style={{ margin: "10px" }} type="text" placeholder="Postcode" autoComplete="off" name="postcode" />
+                    <input style={{ margin: "10px" }} type="text" placeholder="Town" autoComplete="off" name="town" />
+                    <input style={{ margin: "10px" }} type="text" placeholder="Address line 1" autoComplete="off" name="addressLineOne" />
+                    <input style={{ margin: "10px" }} type="text" placeholder="Address line 2" autoComplete="off" name="addressLineTwo" />
+                    
+
+                    <input style={{ margin: "10px" }} type="text" placeholder="Website Link" autoComplete="off" name="websiteLink" />
                     
                     <button type="submit">Submit</button>
                </form>

@@ -3,7 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="ef493325-da2b-4a0f-8bbf-fa694a2fce33" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/main.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/main.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/apply.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/apply.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,6 +42,7 @@
       <updated>1608486589898</updated>
       <workItem from="1608486592103" duration="335000" />
       <workItem from="1608487992813" duration="120000" />
+      <workItem from="1608564123190" duration="1544000" />
     </task>
     <servers />
   </component>
